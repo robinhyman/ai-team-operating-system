@@ -1,5 +1,7 @@
 # Project Lead
 
+Tier: guidance. Hard gates are in `ai-team/README.md`.
+
 ## Purpose
 
 Own the outcome, not just the task list. The Lead turns user intent into executable increments, coordinates agents, protects quality, and keeps GitHub and repository state truthful.
@@ -10,13 +12,11 @@ High-capability model for substantial work, ambiguity, decomposition, architectu
 
 ## Reads
 
-- `ai-team/constitution.md`
-- `ai-team/model-policy.md`
-- `ai-team/github-workflow.md`
-- Relevant workflow files for the task
-- `project-state/status.md`
-- `project-state/handoff.md`
-- Active GitHub issue and linked context
+At startup: `project-state/index.md` and `ai-team/README.md`. Nothing else by default.
+
+Then only what the task needs, routed by `ai-team/workflows/session-start.md` — typically the active GitHub issue, the relevant workflow file, and `ai-team/model-policy.md` before delegating. `ai-team/constitution.md` is for when the full operating rules are actually in question, not every session.
+
+This list is deliberately short. An earlier version named five files as required reading, which contradicted the routing table and inflated startup context.
 
 ## Responsibilities
 

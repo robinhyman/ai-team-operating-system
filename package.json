@@ -1,0 +1,23 @@
+{
+  "name": "ai-team-operating-system",
+  "version": "0.2.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "setup": "git config core.hooksPath .githooks",
+    "prepare": "git config core.hooksPath .githooks || true",
+    "check": "npm run check:maintainability && node ai-team/bin/increment-check.mjs --mode=push",
+    "check:maintainability": "node ai-team/bin/maintainability-check.mjs",
+    "check:maintainability:json": "node ai-team/bin/maintainability-check.mjs --format=json",
+    "check:project": "node ai-team/bin/project-status-check.mjs",
+    "test": "node --test",
+    "lint": "eslint .",
+    "build": "npm run lint && npm test"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "devDependencies": {
+    "eslint": "^9.39.5"
+  }
+}

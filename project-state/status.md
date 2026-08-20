@@ -1,39 +1,32 @@
 # Project Status
 
-Last updated: 2026-08-15
+Last updated: 2026-08-20
 
 ## Current State
 
-This repository contains reusable AI team operating artefacts. No application code is included.
+This repository contains reusable AI team operating artifacts. No application code is included.
 
-The team now has an explicit increment workflow and Increment Definition Of Done in `ai-team/workflows/increment.md`.
+The current OS is refreshed from the project-local `ai-team/` implementation in `key-results-generator`.
 
-An increment is not `Done` unless it is available in the target demonstration environment and reported with a checked working link.
+Hard gates, obligation tiers, and startup routing are defined in `ai-team/README.md`.
 
-Testing is a first-class increment gate. Use `ai-team/workflows/testing.md` for verification planning and failure handling.
+The repository includes Node-based process checks, local git hooks, a PR template, and CI workflow wiring.
 
-Test-first development is preferred for behaviorally clear work and should be reported per increment.
+Process check coverage includes increment report sections, secret scanning, state-file coherence and budgets, branch naming, and maintainability ratcheting.
 
-Lead intake and ticket creation are governed by `ai-team/workflows/intake-and-specification.md`.
-
-Role specs, branch/PR policy, web local-first project profile, and retrospective workflow are now defined.
-
-Documentation standards are defined in `ai-team/workflows/documentation.md`, with a Documentarian role spec in `ai-team/roles/documentarian.md`.
-
-GitHub repository: `<owner>/<project-repo>`
+GitHub repository: `robinhyman/ai-team-operating-system`
 
 GitHub Project: `<project-name>` at `<project-url>`
 
-Active GitHub issue: `<setup-issue>`
+Active GitHub issue: none linked for this refresh branch.
 
 ## Active Goal
 
-Provide a reusable AI software delivery team operating system that can be copied into project repositories.
+Provide a reusable AI software delivery team operating system that can be copied into project repositories and validated mechanically.
 
 ## Current Runtime Assumption
 
-- Codex main chat acts as Project Lead.
-- Short-lived subagents handle bounded worker tasks.
+- A Lead agent coordinates bounded worker tasks.
 - GitHub issues inside the target GitHub Project provide work tracking and observability.
 - Repo state files provide compact continuation memory.
 - Product work should be delivered in increments, each tied to one primary GitHub issue.

@@ -1,6 +1,6 @@
 # Task Ledger
 
-Last updated: 2026-08-15
+Last updated: 2026-08-20
 
 ## Completed
 
@@ -19,10 +19,12 @@ Last updated: 2026-08-15
 - Added web app local-first project profile.
 - Added retrospective workflow and report template.
 - Added Documentarian role and documentation workflow.
+- Refreshed the reusable OS from the current project-local implementation.
+- Added deterministic process-check scripts, hooks, CI workflow, PR template, and checker tests.
 
 ## Active
 
-- Apply this operating system to a target project.
+- Review and publish the refreshed reusable operating-system branch.
 
 ## Blocked
 
@@ -30,10 +32,6 @@ Last updated: 2026-08-15
 
 ## Next
 
-- Create or identify the target GitHub repository and Project.
-- Define the first product goal.
-- Create the first software-build GitHub issue and add it to the Project.
-- Run the first build as a bounded increment.
-- Define the verification plan before implementing the first build increment.
-- Use Ready Criteria before marking the first software-build issue `Ready`.
-- Assess documentation impact during the first build increment.
+- Open a PR for the refreshed reusable OS.
+- Configure the `Process / increment-check` workflow as a required check after merge.
+- Apply this operating system to target product repositories.

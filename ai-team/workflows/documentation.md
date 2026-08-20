@@ -1,5 +1,7 @@
 # Documentation Workflow
 
+Tier: guidance. Hard gates are in `ai-team/README.md`.
+
 Documentation is part of delivery when an increment changes behavior, setup, architecture, deployment, user workflow, or operating rules.
 
 ## Core Rules
@@ -10,7 +12,7 @@ Documentation is part of delivery when an increment changes behavior, setup, arc
 - Avoid duplicating the same truth across multiple files.
 - Remove or correct stale docs when discovered.
 - If documentation is affected but not updated, explain why in the increment report.
-- Constitution, workflow, role, model-policy, and project-profile changes from retrospectives require user approval before editing.
+- Constitution, workflow, role, model-policy, and project-profile changes require explicit authority: Robin approval or a standing autonomous-maintenance policy that covers the change.
 
 ## Documentation Impact Check
 
@@ -69,4 +71,3 @@ Every increment report must include:
 - Docs skipped and why.
 - Stale docs found.
 - Documentation follow-up issues.
-

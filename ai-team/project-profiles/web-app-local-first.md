@@ -1,5 +1,7 @@
 # Web App Local-First Project Profile
 
+Tier: guidance. Hard gates are in `ai-team/README.md`.
+
 This profile applies to web applications that must be built, tested, and demonstrated locally before later hosted deployment.
 
 ## Target Environment
@@ -17,6 +19,8 @@ For any user-facing increment:
 - Open the URL and check the affected flow.
 - Confirm there are no obvious page-load, console, or network failures.
 - Include the checked link in the increment report.
+- If the checked link is a local URL, leave the local server running when handing the link to the user unless the user explicitly says they do not need it. Do not stop the server before final response.
+- If the server cannot be left running, do not present the local URL as currently available. Say exactly how to start it again, record the limitation, and keep the increment out of `Done` if the user needs a live demo.
 
 ## Default Verification
 
@@ -31,6 +35,14 @@ Run when applicable:
 - Browser check of affected user flow.
 - Screenshot or visual evidence for UI changes.
 - Basic accessibility sanity check for interactive UI.
+
+For Playwright-based browser checks, install the required browser binary after dependency installation or updates:
+
+```bash
+npx playwright install chromium
+```
+
+Record browser-binary installation failures separately from product failures, then rerun the browser check after setup succeeds.
 
 ## Done Rule
 
@@ -52,4 +64,3 @@ When hosting is selected, update this profile with:
 - Environment variable handling.
 - Preview URL rules.
 - Production approval rules.
-

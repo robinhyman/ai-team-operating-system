@@ -1,5 +1,7 @@
 # Testing Workflow
 
+Tier: guidance. Hard gates are in `ai-team/README.md`.
+
 Testing is a first-class part of every increment. The Lead owns verification, even when a Tester agent performs the work.
 
 ## Core Rules
@@ -82,6 +84,14 @@ For web-based increments, use these checks when applicable:
 - Screenshot or visual confirmation for UI changes.
 - Console and network error check where practical.
 - Basic accessibility sanity check for interactive UI.
+
+When adding or updating Playwright browser tests, verify that the required browser binary is installed before treating the test result as meaningful. For Chromium-only coverage, the standard setup command is:
+
+```bash
+npx playwright install chromium
+```
+
+If the first browser run fails because the browser binary is missing, install the binary and rerun the browser test before recording the check as failed product behavior.
 
 ## Tester Role
 

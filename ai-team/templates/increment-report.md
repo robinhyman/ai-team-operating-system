@@ -1,5 +1,7 @@
 # Increment Report
 
+Tier: template. Fill in; do not treat as rules.
+
 ## Increment
 
 Linked issue:
@@ -14,6 +16,16 @@ What changed and why.
 
 - [ ] Criterion 1
 - [ ] Criterion 2
+
+## Solution Design
+
+Design used or skipped:
+
+Architect review:
+
+Code-quality constraints:
+
+Implementation deviations:
 
 ## Verification
 
@@ -43,6 +55,10 @@ Target environment:
 
 Checked app/demo link:
 
+Durable demo evidence, if user-facing:
+
+Local server left running, if applicable:
+
 What was checked:
 
 Result:
@@ -54,6 +70,43 @@ Reviewer:
 Risks considered:
 
 Remaining concerns:
+
+## Process Review
+
+Process reviewer and model tier:
+
+Checklist or rule set checked:
+
+Evidence returned:
+
+Unresolved process concerns:
+
+## Model Use
+
+Lead model tier:
+
+Delegation gate satisfied or exception:
+
+Worker tasks delegated to cheaper/faster models:
+
+Worker model tier(s):
+
+Worker evidence:
+
+Lightweight model-use telemetry:
+- Lead turns:
+- Worker count by tier, writing 0 where none:
+- Delegated task count, writing 0 where none:
+- Expensive reruns or restarts, writing 0 where none:
+- Exact token counts available? yes/no/not observable:
+
+Tasks kept on high-capability model and why:
+
+Skipped delegation reason and risk, if any:
+
+Escalations:
+
+Cost-control notes for next increment:
 
 ## Documentation
 
@@ -80,3 +133,13 @@ Follow-up issues:
 Files updated:
 
 Next increment:
+
+## Retrospective
+
+Delta retro, per `ai-team/workflows/retrospective.md`. Three fields unless a full-retrospective trigger fired.
+
+What slowed this down:
+
+What would change in the operating model:
+
+Carried forward:

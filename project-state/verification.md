@@ -1,6 +1,6 @@
 # Verification
 
-Last updated: 2026-08-15
+Last updated: 2026-08-20
 
 ## Checks Run
 
@@ -20,9 +20,12 @@ Last updated: 2026-08-15
 - Role specs for Lead, Architect, Builder, Tester, Reviewer, and Release Agent created.
 - Branch/PR policy, web local-first profile, and retrospective workflow created.
 - Documentarian role and documentation workflow created.
+- `npm test` passed for the reusable OS checker suite.
+- `npm run check:maintainability` passed after regenerating the standalone baseline.
 
 ## Not Yet Verified
 
+- Full `npm run check` after branch rename and state refresh.
 - First agent-run workflow against a real issue.
 - Testing workflow against a real software increment.
 - Intake/specification workflow against the first real product goal.

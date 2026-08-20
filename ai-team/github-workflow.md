@@ -1,5 +1,7 @@
 # GitHub Workflow
 
+Tier: guidance. Hard gates are in `ai-team/README.md`.
+
 GitHub provides the work queue, discussion record, and observable progress trail.
 
 All agent-managed issues should live inside the repository's GitHub Project. Standalone issues are allowed only as a temporary fallback when the project is unavailable or the Lead lacks permission to update it.
@@ -41,6 +43,7 @@ Use the custom GitHub Project single-select field `Agent Status` for agent workf
 
 - Every actionable issue created by the Lead should be added to the GitHub Project.
 - The GitHub Project `Agent Status` field is the primary visible state for agent work.
+- If the Project also has the standard single-select `Status` field, keep both `Status` and `Agent Status` aligned when moving agent-managed issues.
 - `Agent Status` must reflect reality at all times, not just at session close.
 - Move an issue to `In Progress` as soon as meaningful work starts on it.
 - Move an issue to `Blocked` as soon as progress is blocked by missing information, permissions, failing external services, or a dependency outside the agent's control.
@@ -49,6 +52,64 @@ Use the custom GitHub Project single-select field `Agent Status` for agent workf
 - Issue comments should explain important progress, blockers, and verification results.
 - Labels describe type, risk, and agent suitability; Project fields describe flow state and priority.
 - If the Lead cannot add an issue to the Project, it must note that in the issue comment or session handoff.
+
+## Project Status Fallback With GitHub CLI
+
+When the GitHub connector can create or comment on issues but does not expose GitHub Project v2 mutations, use the GitHub CLI if it is authenticated with `project` scope. If `gh auth status` fails inside the sandbox, retry with approved unsandboxed execution before concluding the token is invalid.
+
+1. Confirm authentication and scope:
+
+```bash
+gh auth status
+```
+
+2. Read Project field and option ids:
+
+```bash
+gh project field-list 4 --owner robinhyman --format json
+```
+
+3. Add an issue to the Project:
+
+```bash
+gh project item-add 4 --owner robinhyman --url https://github.com/robinhyman/key-results-generator/issues/NUMBER --format json
+```
+
+4. Read the Project id and item ids:
+
+```bash
+gh project view 4 --owner robinhyman --format json
+gh project item-list 4 --owner robinhyman --format json --limit 100
+```
+
+5. Set the `Agent Status` field:
+
+```bash
+gh project item-edit --id ITEM_ID --project-id PROJECT_ID --field-id AGENT_STATUS_FIELD_ID --single-select-option-id OPTION_ID
+```
+
+6. If the Project also uses the regular `Status` field, set it to the matching value:
+
+```bash
+gh project item-edit --id ITEM_ID --project-id PROJECT_ID --field-id STATUS_FIELD_ID --single-select-option-id STATUS_OPTION_ID
+```
+
+Current Project constants:
+
+- Project id: `PVT_kwHOACPlI84BgYKU`
+- `Status` field id: `PVTSSF_lAHOACPlI84BgYKUzhakihY`
+- `Status` `Todo`: `f75ad846`
+- `Status` `In Progress`: `47fc9ee4`
+- `Status` `Done`: `98236657`
+- `Agent Status` field id: `PVTSSF_lAHOACPlI84BgYKUzhakixk`
+- `Inbox`: `465e83e4`
+- `Ready`: `b2f84160`
+- `In Progress`: `35dfefe5`
+- `Review`: `fc90e124`
+- `Blocked`: `cebb2f4c`
+- `Done`: `743a4795`
+
+If approved unsandboxed CLI authentication is unavailable or lacks `project` scope, comment on the issue and update `project-state/handoff.md` with the exact Project update that remains blocked.
 
 ## Recommended Labels
 
@@ -144,4 +205,5 @@ Whether this blocks the current task or should be handled separately.
 9. Update project state files.
 10. Comment a concise result or increment report on the issue.
 11. Open or update a PR when code is ready.
-12. Move the issue to `Review` or `Done` only when that status is true. `Done` requires a checked working app/demo link in the issue comment.
+12. Before merge, run `npm run check:project -- --issue=NUMBER --agent-status="Review"` or record the exact blocker.
+13. Move the issue to `Review` or `Done` only when that status is true. `Done` requires a checked working app/demo link or explicit non-user-facing declaration in the issue comment.

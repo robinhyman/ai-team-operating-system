@@ -1,8 +1,18 @@
 # Task Brief
 
+Tier: template. Fill in; do not treat as rules.
+
 ## Objective
 
 What this agent should accomplish.
+
+## Model Tier
+
+Suggested tier:
+
+Reason this tier is sufficient:
+
+Escalation trigger:
 
 ## Scope
 
@@ -28,6 +38,18 @@ What this agent must not change.
 - Issue spec:
 - Acceptance criteria:
 - Out-of-scope notes:
+
+## Solution Design
+
+Design note or link:
+
+Affected boundaries:
+
+Code-quality constraints:
+
+Architect review required:
+
+Escalation triggers:
 
 ## Verification
 

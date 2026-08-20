@@ -1,6 +1,6 @@
 # Handoff
 
-Last updated: 2026-08-15
+Last updated: 2026-08-20
 
 ## Summary
 
@@ -10,32 +10,23 @@ GitHub Project: `<project-name>` at `<project-url>`
 
 GitHub issue `<setup-issue>` should track adaptation of this operating system inside a real project.
 
-The constitution and GitHub workflow now explicitly require `Agent Status` to reflect reality, including moving an issue to `In Progress` as soon as meaningful work starts.
+The current operating entrypoint is `ai-team/README.md`. It defines hard gates, obligation tiers, and the read-on-demand routing table.
 
-The team now has an explicit increment workflow and Increment Definition Of Done in `ai-team/workflows/increment.md`, plus an increment report template at `ai-team/templates/increment-report.md`.
+This repo now includes deterministic process gates: increment report validation, state-file checks, branch-name checks, secret scanning, and maintainability ratcheting.
 
-Important rule: an increment is not `Done` unless it is available in the target demonstration environment and the completion notice includes a checked working link the user can open.
+Install local hooks with `npm run setup`. Run `npm test` for checker tests and `npm run check` for the same process gate used by hooks/CI.
 
-Testing rule: each increment must define a verification plan, follow `ai-team/workflows/testing.md`, and report automated checks, manual checks, skipped checks, known failures, and follow-up bugs.
-
-TDD rule: prefer test-first development for behaviorally clear work. If skipped for a behavior change, explain why in the increment report.
-
-Intake rule: use `ai-team/workflows/intake-and-specification.md` and `ai-team/templates/issue-spec.md` when turning goals or discoveries into GitHub issues.
-
-Continuous improvement rule: after each increment, run `ai-team/workflows/retrospective.md`. Any constitutional or workflow improvement must be approved by the user before being applied, and approved changes should be committed before the next increment.
-
-Role specs now include Project Lead, Architect, Builder, Tester, Reviewer, Release Agent, and Documentarian.
-
-Documentation rule: use `ai-team/workflows/documentation.md` to assess docs on every increment. Required documentation updates are part of `Done`.
+The reusable baseline includes workflows for increment delivery, solution design, maintainability, merge closeout, offline GitHub backfill, documentation, testing, intake/specification, and retrospectives.
 
 ## Next Best Actions
 
-1. Copy or fork this operating system into the target project.
-2. Create or identify the target GitHub repository and Project.
-3. Create a setup issue for adapting the operating system.
-4. Define the first product goal and create the first software-build GitHub issue.
-5. Use the increment workflow for the first software-build issue.
-6. Define the target demonstration environment for the first build increment.
+1. Review the refreshed branch and open a PR.
+2. After merge, copy or fork this operating system into target projects.
+3. Create or identify the target GitHub repository and Project.
+4. Create a setup issue for adapting the operating system.
+5. Define the first product goal and create the first software-build GitHub issue.
+6. Use the increment workflow for the first software-build issue.
+7. Define the target demonstration environment for the first build increment.
 
 ## Resume Instructions
 
